@@ -25,7 +25,7 @@ public class FibonacciSeriesWithRecursion {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             int num = Integer.parseInt(bufferedReader.readLine());
             System.out.println("Fibonacci Series:");
-            for (int i=0; i<num; i++) {
+            for (int i=0; i<=num; i++) {
                 System.out.print(getFibonacci(i) + " ");
             }
         } catch (Exception e) {
