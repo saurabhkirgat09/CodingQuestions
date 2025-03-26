@@ -32,8 +32,13 @@ public class FindMaximumSalaryFromDepartment {
                 .filter(e-> e.getSalary() > 40000)
                 .map(Employee::getName)
                 .toList();
-
         System.out.println("List of employees having salaries more than 40K :: " + empNames);
+
+
+        List<Employee> empDescending = employees.stream()
+                        .sorted(Comparator.comparing(Employee::getSalary).reversed()).toList();
+        System.out.println("List of Employees sorted by descending order of their salary :: " + empDescending);
+
     }
 
 
