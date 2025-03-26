@@ -39,6 +39,16 @@ public class FindMaximumSalaryFromDepartment {
                         .sorted(Comparator.comparing(Employee::getSalary).reversed()).toList();
         System.out.println("List of Employees sorted by descending order of their salary :: " + empDescending);
 
+        Optional<Employee> minSalary = employees.stream()
+                .collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
+        System.out.println("min " +minSalary);
+
+        String employeeNames = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.joining(", ", "[", "]"));
+
+        System.out.println("Employee Names: " + employeeNames);
+
     }
 
 
