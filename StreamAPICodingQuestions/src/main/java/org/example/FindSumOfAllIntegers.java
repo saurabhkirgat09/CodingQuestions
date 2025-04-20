@@ -2,13 +2,14 @@ package org.example;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class FindSumOfAllIntegers {
 
     public static void main(String[] args) {
         List<Integer> numList = List.of(2,3,43,54,34,7,65,44,35,75,54,65,54,78,97);
-        Optional<Integer> result =  getSumOfNumbers(numList);
-        result.ifPresent(value -> System.out.println("Sum of All Integers in list is: " + value));
+        int result =  getSumOfNumbers(numList);
+        System.out.println("Sum of All Integers in list is: " + result);
 
         double average = getAverage(numList);
         System.out.println("Average of Given list is: " +average);
@@ -19,10 +20,26 @@ public class FindSumOfAllIntegers {
     }
 
     //Logic to get Sum of Numbers
-    private static Optional<Integer> getSumOfNumbers(List<Integer> numList) {
+    private static int getSumOfNumbers(List<Integer> numList) {
        return numList.stream()
-                .reduce(Integer::sum);
+                .reduce(0, Integer::sum);
     }
+
+    private static int getSumOfNumbersWithMapping(List<Integer> numList) {
+        return numList.stream()
+                .collect(Collectors.summingInt(Integer::intValue));
+    }
+
+    //Logic 2 to get the sum of numbers
+    private static int addAllNumbers(List<Integer> numList) {
+        int sum = 0;
+        for (int num: numList) {
+            sum = sum + num;
+        }
+        return sum;
+    }
+
+
 
     //Logic to get print average
     private static double getAverage(List<Integer> numList) {

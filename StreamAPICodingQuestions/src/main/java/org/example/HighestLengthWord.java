@@ -10,7 +10,7 @@ public class HighestLengthWord {
         String input = "I am learning Streams API in Java";
         String[] arr = input.split(" ");
 
-        String outPutWithTwoPointer = findMaxLengthWordTwoPointer(arr);
+        String outPutWithTwoPointer = findMaxLengthWord(arr);
         String outPutWithStreams = findMaxLengthWordStreams(arr);
 
         System.out.println("The maximum length word with for impl: " + outPutWithTwoPointer);
@@ -23,7 +23,7 @@ public class HighestLengthWord {
                 .orElse("");
     }
 
-    private static String findMaxLengthWordTwoPointer(String [] arr) {
+    private static String findMaxLengthWord(String [] arr) {
         int maxLength = 0;
         int maxIndex = 0;
         for (int i = 0; i < arr.length; i++) {
