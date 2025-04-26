@@ -33,6 +33,14 @@ public class FindMaximumSalaryFromDepartment {
                 .map(Employee::getName)
                 .toList();
 
+
+        List<String> listOfNames = employees.stream()
+                        .filter(e -> e.getSalary() > 50000)
+                        .map(Employee::getName)
+                                .collect(
+                                        Collectors.toList()
+                                );
+
         System.out.println("List of employees having salaries more than 40K :: " + empNames);
 
 
