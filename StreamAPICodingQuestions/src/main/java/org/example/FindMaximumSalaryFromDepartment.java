@@ -14,6 +14,11 @@ public class FindMaximumSalaryFromDepartment {
         return highestSalaries;
     }
 
+    public static void get(List<Employee> employees) {
+        Map<String, List<Employee>> highestSalaries = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment));
+    }
+
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
                 new Employee(1, "Alice", 70000, "IT"),
