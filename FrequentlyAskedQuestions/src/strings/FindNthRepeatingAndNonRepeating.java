@@ -83,6 +83,4 @@ public class FindNthRepeatingAndNonRepeating {
         System.out.println("Second Non-Repeating Character: " + secondNonRepeatingWithOutStreams);
         System.out.println("First Repeating Character: " + firstRepeatingWithOutStreams);
     }
-
-
 }
